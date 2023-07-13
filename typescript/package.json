@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/konfig-dev/postman-getting-started-sdks/tree/master/typescript"
+    "url": "https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/typescript"
   },
   "keywords": [
     "axios",
