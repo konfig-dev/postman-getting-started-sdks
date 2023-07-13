@@ -1,0 +1,70 @@
+examples: {}
+examples_2:
+  /users:
+    get:
+      - country: USA
+        email: hello@world.com
+        id: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+        name: Me
+    post:
+      id: 0fd5d128-daad-4898-bc02-198a49f445c9
+      message: User created successfully
+  /users/{user_id}:
+    delete:
+      message: User deleted successfully
+    get:
+      country: USA
+      email: hello@world.com
+      id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+      name: Me
+    put:
+      message: User updated successfully
+operationIds:
+  /users:
+    get: Users_list
+    post: Users_create
+  /users/{user_id}:
+    delete: Users_delete
+    get: Users_get
+    put: Users_update
+operationTags: {}
+renameTags:
+  users > {user_id}: users
+requestSchemaNames:
+  /users:
+    post:
+      application/json: UsersCreateRequest
+  /users/{user_id}:
+    put:
+      application/json: UsersUpdateRequest
+responseDescriptions: {}
+responseSchemaNames:
+  /users:
+    get:
+      '200':
+        application/json: UsersListResponse
+    post:
+      '200':
+        application/json: UsersCreateResponse
+      '422':
+        application/json: UsersCreate422Response
+  /users/{user_id}:
+    delete:
+      '200':
+        application/json: UsersDeleteResponse
+      '422':
+        application/json: UsersDelete422Response
+    get:
+      '200':
+        application/json: UsersGetResponse
+      '422':
+        application/json: UsersGet422Response
+    put:
+      '200':
+        application/json: UsersUpdateResponse
+      '422':
+        application/json: UsersUpdate422Response
+securityParameters: {}
+validServerUrls:
+  http://{{baseurl}}:
+    url: https://api.konfigthis.com

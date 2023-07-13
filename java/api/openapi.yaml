@@ -1,0 +1,1028 @@
+openapi: 3.0.0
+info:
+  description: This API manages a simple User database
+  title: Requests
+  version: 1.0.0
+servers:
+- url: https://api.konfigthis.com
+security:
+- apikeyAuth: []
+tags:
+- name: users
+paths:
+  /users/{user_id}:
+    delete:
+      operationId: Users_delete
+      parameters:
+      - example: "{{userId}}"
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-konfig-original-example: "{{userId}}"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersDeleteResponse'
+          description: OK
+          headers:
+            date:
+              explode: false
+              schema:
+                example: "Thu, 13 Jul 2023 04:44:49 GMT"
+                type: string
+                x-konfig-original-example: "Thu, 13 Jul 2023 04:44:49 GMT"
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-date-schema
+              style: simple
+            server:
+              explode: false
+              schema:
+                example: uvicorn
+                type: string
+                x-konfig-original-example: uvicorn
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-server-schema
+              style: simple
+            content-length:
+              explode: false
+              schema:
+                example: 39
+                type: integer
+                x-konfig-original-example: 39
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-content-length-schema
+              style: simple
+            content-type:
+              explode: false
+              schema:
+                example: application/json
+                type: string
+                x-konfig-original-example: application/json
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-content-type-schema
+              style: simple
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersDelete422Response'
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          x-do-not-generate: true
+      summary: Delete User
+      tags:
+      - users
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-delete--users-user_id
+      x-accepts: application/json
+    get:
+      operationId: Users_get
+      parameters:
+      - example: "{{userId}}"
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-konfig-original-example: "{{userId}}"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersGetResponse'
+          description: OK
+          headers:
+            date:
+              explode: false
+              schema:
+                example: "Thu, 13 Jul 2023 04:43:44 GMT"
+                type: string
+                x-konfig-original-example: "Thu, 13 Jul 2023 04:43:44 GMT"
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-get-responses-200-headers-date-schema
+              style: simple
+            server:
+              explode: false
+              schema:
+                example: uvicorn
+                type: string
+                x-konfig-original-example: uvicorn
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-get-responses-200-headers-server-schema
+              style: simple
+            content-length:
+              explode: false
+              schema:
+                example: 99
+                type: integer
+                x-konfig-original-example: 99
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-get-responses-200-headers-content-length-schema
+              style: simple
+            content-type:
+              explode: false
+              schema:
+                example: application/json
+                type: string
+                x-konfig-original-example: application/json
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-get-responses-200-headers-content-type-schema
+              style: simple
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersGet422Response'
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          x-do-not-generate: true
+      summary: Get User
+      tags:
+      - users
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-get--users-user_id
+      x-accepts: application/json
+    put:
+      operationId: Users_update
+      parameters:
+      - example: "{{userId}}"
+        explode: false
+        in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+        style: simple
+        x-konfig-original-example: "{{userId}}"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              example-1:
+                value:
+                  name: new name
+                  email: new@email.com
+                  country: USA
+            schema:
+              $ref: '#/components/schemas/UsersUpdateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersUpdateResponse'
+          description: OK
+          headers:
+            date:
+              explode: false
+              schema:
+                example: "Thu, 13 Jul 2023 04:44:31 GMT"
+                type: string
+                x-konfig-original-example: "Thu, 13 Jul 2023 04:44:31 GMT"
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-put-responses-200-headers-date-schema
+              style: simple
+            server:
+              explode: false
+              schema:
+                example: uvicorn
+                type: string
+                x-konfig-original-example: uvicorn
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-put-responses-200-headers-server-schema
+              style: simple
+            content-length:
+              explode: false
+              schema:
+                example: 39
+                type: integer
+                x-konfig-original-example: 39
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-put-responses-200-headers-content-length-schema
+              style: simple
+            content-type:
+              explode: false
+              schema:
+                example: application/json
+                type: string
+                x-konfig-original-example: application/json
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-user_id-put-responses-200-headers-content-type-schema
+              style: simple
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersUpdate422Response'
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          x-do-not-generate: true
+      summary: Update User
+      tags:
+      - users
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-put--users-user_id
+      x-content-type: application/json
+      x-accepts: application/json
+  /users:
+    get:
+      operationId: Users_list
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersListResponse'
+          description: OK
+          headers:
+            date:
+              explode: false
+              schema:
+                example: "Thu, 13 Jul 2023 04:56:45 GMT"
+                type: string
+                x-konfig-original-example: "Thu, 13 Jul 2023 04:56:45 GMT"
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-get-responses-200-headers-date-schema
+              style: simple
+            server:
+              explode: false
+              schema:
+                example: uvicorn
+                type: string
+                x-konfig-original-example: uvicorn
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-get-responses-200-headers-server-schema
+              style: simple
+            content-length:
+              explode: false
+              schema:
+                example: 101
+                type: integer
+                x-konfig-original-example: 101
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-get-responses-200-headers-content-length-schema
+              style: simple
+            content-type:
+              explode: false
+              schema:
+                example: application/json
+                type: string
+                x-konfig-original-example: application/json
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-get-responses-200-headers-content-type-schema
+              style: simple
+      summary: Get Users
+      tags:
+      - users
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-get--users
+      x-accepts: application/json
+    post:
+      operationId: Users_create
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            examples:
+              example-1:
+                value:
+                  name: Me
+                  email: hello@world.com
+                  country: USA
+            schema:
+              $ref: '#/components/schemas/UsersCreateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersCreateResponse'
+          description: OK
+          headers:
+            date:
+              explode: false
+              schema:
+                example: "Wed, 12 Jul 2023 16:57:20 GMT"
+                type: string
+                x-konfig-original-example: "Wed, 12 Jul 2023 16:57:20 GMT"
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-post-responses-200-headers-date-schema
+              style: simple
+            server:
+              explode: false
+              schema:
+                example: uvicorn
+                type: string
+                x-konfig-original-example: uvicorn
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-post-responses-200-headers-server-schema
+              style: simple
+            content-length:
+              explode: false
+              schema:
+                example: 83
+                type: integer
+                x-konfig-original-example: 83
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-post-responses-200-headers-content-length-schema
+              style: simple
+            content-type:
+              explode: false
+              schema:
+                example: application/json
+                type: string
+                x-konfig-original-example: application/json
+                x-konfig-generated-schema: konfig-generated-schema-paths--users-post-responses-200-headers-content-type-schema
+              style: simple
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersCreate422Response'
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          x-do-not-generate: true
+      summary: Create User
+      tags:
+      - users
+      x-konfig-operation-can-have-single-parameter: true
+      x-konfig-single-parameter-schema: konfig-generated-schema-single-parameter-schema-post--users
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    UsersUpdateRequest:
+      example:
+        name: new name
+        email: new@email.com
+        country: USA
+      properties:
+        name:
+          example: new name
+          type: string
+          x-konfig-original-example: new name
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-name
+        email:
+          example: new@email.com
+          type: string
+          x-konfig-original-example: new@email.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-country
+      type: object
+      x-konfig-original-example:
+        name: new name
+        email: new@email.com
+        country: USA
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest
+    UsersCreateRequest:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+      properties:
+        name:
+          example: Me
+          type: string
+          x-konfig-original-example: Me
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-name
+        email:
+          example: hello@world.com
+          type: string
+          x-konfig-original-example: hello@world.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-country
+      type: object
+      x-konfig-original-example:
+        name: Me
+        email: hello@world.com
+        country: USA
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest
+    UsersDeleteResponse:
+      example:
+        message: User deleted successfully
+      properties:
+        message:
+          example: User deleted successfully
+          type: string
+          x-konfig-original-example: User deleted successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersDeleteResponse-properties-message
+      type: object
+      x-konfig-original-example:
+        message: User deleted successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersDeleteResponse
+      x-konfig-is-used-in-successful-response: true
+    UsersDelete422Response:
+      example:
+        message: User deleted successfully
+      properties:
+        message:
+          example: User deleted successfully
+          type: string
+          x-konfig-original-example: User deleted successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersDelete422Response-properties-message
+      type: object
+      x-konfig-original-example:
+        message: User deleted successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersDelete422Response
+      x-konfig-is-used-in-non-successful-response: true
+      x-do-not-generate: true
+    UsersGetResponse:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      properties:
+        name:
+          example: Me
+          type: string
+          x-konfig-original-example: Me
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGetResponse-properties-name
+        email:
+          example: hello@world.com
+          type: string
+          x-konfig-original-example: hello@world.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGetResponse-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGetResponse-properties-country
+        id:
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+          type: string
+          x-konfig-original-example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGetResponse-properties-id
+      type: object
+      x-konfig-original-example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGetResponse
+      x-konfig-is-used-in-successful-response: true
+    UsersGet422Response:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      properties:
+        name:
+          example: Me
+          type: string
+          x-konfig-original-example: Me
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGet422Response-properties-name
+        email:
+          example: hello@world.com
+          type: string
+          x-konfig-original-example: hello@world.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGet422Response-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGet422Response-properties-country
+        id:
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+          type: string
+          x-konfig-original-example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGet422Response-properties-id
+      type: object
+      x-konfig-original-example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersGet422Response
+      x-konfig-is-used-in-non-successful-response: true
+      x-do-not-generate: true
+    UsersUpdateResponse:
+      example:
+        message: User updated successfully
+      properties:
+        message:
+          example: User updated successfully
+          type: string
+          x-konfig-original-example: User updated successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateResponse-properties-message
+      type: object
+      x-konfig-original-example:
+        message: User updated successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateResponse
+      x-konfig-is-used-in-successful-response: true
+    UsersUpdate422Response:
+      example:
+        message: User updated successfully
+      properties:
+        message:
+          example: User updated successfully
+          type: string
+          x-konfig-original-example: User updated successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdate422Response-properties-message
+      type: object
+      x-konfig-original-example:
+        message: User updated successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdate422Response
+      x-konfig-is-used-in-non-successful-response: true
+      x-do-not-generate: true
+    UsersListResponse:
+      example:
+      - name: Me
+        email: hello@world.com
+        country: USA
+        id: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+      items:
+        $ref: '#/components/schemas/UsersListResponse_inner'
+      type: array
+      x-konfig-original-example:
+      - name: Me
+        email: hello@world.com
+        country: USA
+        id: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersListResponse
+      x-konfig-is-used-in-successful-response: true
+    UsersCreateResponse:
+      example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      properties:
+        id:
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9
+          type: string
+          x-konfig-original-example: 0fd5d128-daad-4898-bc02-198a49f445c9
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateResponse-properties-id
+        message:
+          example: User created successfully
+          type: string
+          x-konfig-original-example: User created successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateResponse-properties-message
+      type: object
+      x-konfig-original-example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateResponse
+      x-konfig-is-used-in-successful-response: true
+    UsersCreate422Response:
+      example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      properties:
+        id:
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9
+          type: string
+          x-konfig-original-example: 0fd5d128-daad-4898-bc02-198a49f445c9
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreate422Response-properties-id
+        message:
+          example: User created successfully
+          type: string
+          x-konfig-original-example: User created successfully
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreate422Response-properties-message
+      type: object
+      x-konfig-original-example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreate422Response
+      x-konfig-is-used-in-non-successful-response: true
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-get-responses-200-headers-date-schema:
+      example: "Thu, 13 Jul 2023 04:43:44 GMT"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-get-responses-200-headers-server-schema:
+      example: uvicorn
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-get-responses-200-headers-content-length-schema:
+      example: 99
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-get-responses-200-headers-content-type-schema:
+      example: application/json
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-put-responses-200-headers-date-schema:
+      example: "Thu, 13 Jul 2023 04:44:31 GMT"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-put-responses-200-headers-server-schema:
+      example: uvicorn
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-put-responses-200-headers-content-length-schema:
+      example: 39
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-put-responses-200-headers-content-type-schema:
+      example: application/json
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-date-schema:
+      example: "Thu, 13 Jul 2023 04:44:49 GMT"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-server-schema:
+      example: uvicorn
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-content-length-schema:
+      example: 39
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-user_id-delete-responses-200-headers-content-type-schema:
+      example: application/json
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-get-responses-200-headers-date-schema:
+      example: "Thu, 13 Jul 2023 04:56:45 GMT"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-get-responses-200-headers-server-schema:
+      example: uvicorn
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-get-responses-200-headers-content-length-schema:
+      example: 101
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-get-responses-200-headers-content-type-schema:
+      example: application/json
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-post-responses-200-headers-date-schema:
+      example: "Wed, 12 Jul 2023 16:57:20 GMT"
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-post-responses-200-headers-server-schema:
+      example: uvicorn
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-post-responses-200-headers-content-length-schema:
+      example: 83
+      type: number
+      x-do-not-generate: true
+    konfig-generated-schema-paths--users-post-responses-200-headers-content-type-schema:
+      example: application/json
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateRequest:
+      example:
+        name: new name
+        email: new@email.com
+        country: USA
+      properties:
+        name:
+          example: new name
+          type: string
+        email:
+          example: new@email.com
+          type: string
+        country:
+          example: USA
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-name:
+      example: new name
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-email:
+      example: new@email.com
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-country:
+      example: USA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateRequest:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+      properties:
+        name:
+          example: Me
+          type: string
+        email:
+          example: hello@world.com
+          type: string
+        country:
+          example: USA
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateRequest-properties-name:
+      example: Me
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateRequest-properties-email:
+      example: hello@world.com
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateRequest-properties-country:
+      example: USA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersDeleteResponse:
+      example:
+        message: User deleted successfully
+      properties:
+        message:
+          example: User deleted successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersDeleteResponse-properties-message:
+      example: User deleted successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersDelete422Response:
+      example:
+        message: User deleted successfully
+      properties:
+        message:
+          example: User deleted successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersDelete422Response-properties-message:
+      example: User deleted successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGetResponse:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      properties:
+        name:
+          example: Me
+          type: string
+        email:
+          example: hello@world.com
+          type: string
+        country:
+          example: USA
+          type: string
+        id:
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGetResponse-properties-name:
+      example: Me
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGetResponse-properties-email:
+      example: hello@world.com
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGetResponse-properties-country:
+      example: USA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGetResponse-properties-id:
+      example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGet422Response:
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+      properties:
+        name:
+          example: Me
+          type: string
+        email:
+          example: hello@world.com
+          type: string
+        country:
+          example: USA
+          type: string
+        id:
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGet422Response-properties-name:
+      example: Me
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGet422Response-properties-email:
+      example: hello@world.com
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGet422Response-properties-country:
+      example: USA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersGet422Response-properties-id:
+      example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateResponse:
+      example:
+        message: User updated successfully
+      properties:
+        message:
+          example: User updated successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdateResponse-properties-message:
+      example: User updated successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdate422Response:
+      example:
+        message: User updated successfully
+      properties:
+        message:
+          example: User updated successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersUpdate422Response-properties-message:
+      example: User updated successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersListResponse:
+      example:
+      - name: Me
+        email: hello@world.com
+        country: USA
+        id: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+      items:
+        properties:
+          name:
+            example: Me
+            type: string
+          email:
+            example: hello@world.com
+            type: string
+          country:
+            example: USA
+            type: string
+          id:
+            example: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+            type: string
+        type: object
+      type: array
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersListResponse-items-properties-name:
+      example: Me
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersListResponse-items-properties-email:
+      example: hello@world.com
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersListResponse-items-properties-country:
+      example: USA
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersListResponse-items-properties-id:
+      example: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateResponse:
+      example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      properties:
+        id:
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9X
+          type: string
+        message:
+          example: User created successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateResponse-properties-id:
+      example: 0fd5d128-daad-4898-bc02-198a49f445c9
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreateResponse-properties-message:
+      example: User created successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreate422Response:
+      example:
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+      properties:
+        id:
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9X
+          type: string
+        message:
+          example: User created successfully
+          type: string
+      type: object
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreate422Response-properties-id:
+      example: 0fd5d128-daad-4898-bc02-198a49f445c9
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-components-schemas-UsersCreate422Response-properties-message:
+      example: User created successfully
+      type: string
+      x-do-not-generate: true
+    konfig-generated-schema-single-parameter-schema-delete--users-user_id:
+      properties:
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter:
+      - user_id
+    konfig-generated-schema-single-parameter-schema-get--users-user_id:
+      properties:
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter:
+      - user_id
+    konfig-generated-schema-single-parameter-schema-put--users-user_id:
+      properties:
+        user_id:
+          type: string
+        name:
+          example: new name
+          type: string
+          x-konfig-original-example: new name
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-name
+        email:
+          example: new@email.com
+          type: string
+          x-konfig-original-example: new@email.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersUpdateRequest-properties-country
+      required:
+      - user_id
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter:
+      - user_id
+    konfig-generated-schema-single-parameter-schema-get--users:
+      properties: {}
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter: []
+    konfig-generated-schema-single-parameter-schema-post--users:
+      properties:
+        name:
+          example: Me
+          type: string
+          x-konfig-original-example: Me
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-name
+        email:
+          example: hello@world.com
+          type: string
+          x-konfig-original-example: hello@world.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersCreateRequest-properties-country
+      type: object
+      x-do-not-generate: true
+      x-konfig-is-parameter: []
+    UsersListResponse_inner:
+      properties:
+        name:
+          example: Me
+          type: string
+          x-konfig-original-example: Me
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersListResponse-items-properties-name
+        email:
+          example: hello@world.com
+          type: string
+          x-konfig-original-example: hello@world.com
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersListResponse-items-properties-email
+        country:
+          example: USA
+          type: string
+          x-konfig-original-example: USA
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersListResponse-items-properties-country
+        id:
+          example: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+          type: string
+          x-konfig-original-example: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+          x-konfig-generated-schema: konfig-generated-schema-components-schemas-UsersListResponse-items-properties-id
+      type: object
+  securitySchemes:
+    apikeyAuth:
+      scheme: apikey
+      type: http
+      x-konfig-globally-required-security: true
+

@@ -1,0 +1,382 @@
+openapi: 3.0.0
+info:
+  title: Requests
+  description: This API manages a simple User database
+  version: 1.0.0
+servers:
+  - url: https://api.konfigthis.com
+tags:
+  - name: users
+paths:
+  /users/{user_id}:
+    get:
+      tags:
+        - users
+      summary: Get User
+      operationId: Users_get
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '{{userId}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Thu, 13 Jul 2023 04:43:44 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: 99
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersGetResponse'
+        '422':
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersGet422Response'
+    put:
+      tags:
+        - users
+      summary: Update User
+      operationId: Users_update
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '{{userId}}'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsersUpdateRequest'
+            examples:
+              example-1:
+                value:
+                  name: new name
+                  email: new@email.com
+                  country: USA
+        required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Thu, 13 Jul 2023 04:44:31 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: 39
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersUpdateResponse'
+        '422':
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersUpdate422Response'
+    delete:
+      tags:
+        - users
+      summary: Delete User
+      operationId: Users_delete
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: '{{userId}}'
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Thu, 13 Jul 2023 04:44:49 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: 39
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersDeleteResponse'
+        '422':
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersDelete422Response'
+  /users:
+    get:
+      tags:
+        - users
+      summary: Get Users
+      operationId: Users_list
+      parameters: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Thu, 13 Jul 2023 04:56:45 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: 101
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersListResponse'
+    post:
+      tags:
+        - users
+      summary: Create User
+      operationId: Users_create
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsersCreateRequest'
+            examples:
+              example-1:
+                value:
+                  name: Me
+                  email: hello@world.com
+                  country: USA
+        required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            date:
+              schema:
+                type: string
+                example: Wed, 12 Jul 2023 16:57:20 GMT
+            server:
+              schema:
+                type: string
+                example: uvicorn
+            content-length:
+              schema:
+                type: integer
+                example: 83
+            content-type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersCreateResponse'
+        '422':
+          description: Unprocessable Entity (WebDAV) (RFC 4918)
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsersCreate422Response'
+components:
+  securitySchemes:
+    apikeyAuth:
+      type: http
+      scheme: apikey
+  schemas:
+    UsersUpdateRequest:
+      type: object
+      example:
+        name: new name
+        email: new@email.com
+        country: USA
+      properties:
+        name:
+          type: string
+          example: new name
+        email:
+          type: string
+          example: new@email.com
+        country:
+          type: string
+          example: USA
+    UsersCreateRequest:
+      type: object
+      example:
+        name: Me
+        email: hello@world.com
+        country: USA
+      properties:
+        name:
+          type: string
+          example: Me
+        email:
+          type: string
+          example: hello@world.com
+        country:
+          type: string
+          example: USA
+    UsersDeleteResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User deleted successfully
+      example: &ref_0
+        message: User deleted successfully
+    UsersDelete422Response:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User deleted successfully
+      example: *ref_0
+    UsersGetResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Me
+        email:
+          type: string
+          example: hello@world.com
+        country:
+          type: string
+          example: USA
+        id:
+          type: string
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+      example: &ref_1
+        name: Me
+        email: hello@world.com
+        country: USA
+        id: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348cX
+    UsersGet422Response:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Me
+        email:
+          type: string
+          example: hello@world.com
+        country:
+          type: string
+          example: USA
+        id:
+          type: string
+          example: 2a3d99ee-0369-40a1-a8c2-94f1c2a8348c
+      example: *ref_1
+    UsersUpdateResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User updated successfully
+      example: &ref_2
+        message: User updated successfully
+    UsersUpdate422Response:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User updated successfully
+      example: *ref_2
+    UsersListResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            example: Me
+          email:
+            type: string
+            example: hello@world.com
+          country:
+            type: string
+            example: USA
+          id:
+            type: string
+            example: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+      example:
+        - name: Me
+          email: hello@world.com
+          country: USA
+          id: 8aac2554-204a-41b5-a9a6-27ee01d1f182
+    UsersCreateResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9
+        message:
+          type: string
+          example: User created successfully
+      example: &ref_3
+        id: 0fd5d128-daad-4898-bc02-198a49f445c9X
+        message: User created successfully
+    UsersCreate422Response:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 0fd5d128-daad-4898-bc02-198a49f445c9
+        message:
+          type: string
+          example: User created successfully
+      example: *ref_3
+security:
+  - apikeyAuth: []

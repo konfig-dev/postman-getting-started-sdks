@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://unpkg.com/konfig-lib@latest/konfig-yaml.schema.json
+
+outputDirectory: /tmp/konfig-sdks-out
+specPath: api.yaml
+generators:
+  java:
+    version: 1.0.0
+    groupId: com.konfigthis
+    artifactId: konfig-java-sdk
+    clientName: Konfig
+    outputDirectory: java
+    git:
+      userId: konfig-dev
+      repoId: konfig-sdks/tree/main/java
+  python:
+    version: 1.0.0
+    packageName: konfig_client
+    projectName: konfig-python-sdk
+    outputDirectory: python
+    clientName: Konfig
+    git:
+      userId: konfig-dev
+      repoId: konfig-sdks/tree/main/python
+  typescript:
+    version: 1.0.0
+    npmName: konfig-typescript-sdk
+    outputDirectory: typescript
+    clientName: Konfig
+    git:
+      userId: konfig-dev
+      repoId: konfig-sdks/tree/main/typescript
