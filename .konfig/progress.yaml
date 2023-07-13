@@ -19,6 +19,8 @@ examples_2:
       name: Me
     put:
       message: User updated successfully
+fixOnlyOneTagName: false
+ignoreObjectsWithNoProperties: false
 operationIds:
   /users:
     get: Users_list
