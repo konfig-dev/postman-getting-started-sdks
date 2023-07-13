@@ -1,10 +1,10 @@
-# 
+# postman-getting-started-sdks
 
 |Language|Version|Package Manager|Documentation|Source|
 |-|-|-|-|-|
-|Java|1.0.0|[Maven Central](https://central.sonatype.com/artifact/com.konfigthis/konfig-java-sdk/1.0.0)|[Documentation](https://github.com/konfig-dev/konfig-sdks/tree/main/java/README.md)|[Source](https://github.com/konfig-dev/konfig-sdks/tree/main/java)|
-|Python|1.0.0|[PyPI](https://pypi.org/project/konfig-python-sdk/1.0.0)|[Documentation](https://github.com/konfig-dev/konfig-sdks/tree/main/python/README.md)|[Source](https://github.com/konfig-dev/konfig-sdks/tree/main/python)|
-|TypeScript|1.0.0|[npm](https://www.npmjs.com/package/konfig-typescript-sdk/v/1.0.0)|[Documentation](https://github.com/konfig-dev/konfig-sdks/tree/main/typescript/README.md)|[Source](https://github.com/konfig-dev/konfig-sdks/tree/main/typescript)|
+|Java|1.0.0|[Maven Central](https://central.sonatype.com/artifact/com.konfigthis/konfig-java-sdk/1.0.0)|[Documentation](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/java/README.md)|[Source](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/java)|
+|Python|1.0.0|[PyPI](https://pypi.org/project/konfig-python-sdk/1.0.0)|[Documentation](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/python/README.md)|[Source](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/python)|
+|TypeScript|1.0.0|[npm](https://www.npmjs.com/package/konfig-typescript-sdk/v/1.0.0)|[Documentation](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/typescript/README.md)|[Source](https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/typescript)|
 
 
 ## How to regenerate SDKs

@@ -39,7 +39,7 @@ setup(
     description="Requests",
     author="Konfig",
     author_email="engineering@konfigthis.com",
-    url="https://github.com/konfig-dev/konfig-sdks/tree/main/python",
+    url="https://github.com/konfig-dev/postman-getting-started-sdks/tree/main/python",
     keywords=["Konfig", "Requests"],
     license="MIT",
     python_requires=">=3.7",

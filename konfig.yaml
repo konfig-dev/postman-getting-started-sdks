@@ -11,7 +11,7 @@ generators:
     outputDirectory: java
     git:
       userId: konfig-dev
-      repoId: konfig-sdks/tree/main/java
+      repoId: postman-getting-started-sdks/tree/main/java
   python:
     version: 1.0.0
     packageName: konfig_client
@@ -20,7 +20,7 @@ generators:
     clientName: Konfig
     git:
       userId: konfig-dev
-      repoId: konfig-sdks/tree/main/python
+      repoId: postman-getting-started-sdks/tree/main/python
   typescript:
     version: 1.0.0
     npmName: konfig-typescript-sdk
@@ -28,4 +28,4 @@ generators:
     clientName: Konfig
     git:
       userId: konfig-dev
-      repoId: konfig-sdks/tree/main/typescript
+      repoId: postman-getting-started-sdks/tree/main/typescript
